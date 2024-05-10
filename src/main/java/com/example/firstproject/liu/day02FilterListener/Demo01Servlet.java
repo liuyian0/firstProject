@@ -1,25 +1,25 @@
-package com.example.firstproject.liu.day01;
+package com.example.firstproject.liu.day02FilterListener;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("/getSessionServlet")
-public class GetSessionServlet extends HttpServlet {
+@WebServlet("/demo01Servlet")
+public class Demo01Servlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+/*        //解决请求乱码
+        request.setCharacterEncoding("utf-8");
+        //解决响应乱码
         response.setContentType("text/html;charset=utf-8");
-        //1.获取Session
-        HttpSession session = request.getSession();
-        //2.获取session的id
-        String sessionId = session.getId();
-        //3.从session中取出商品
-        Product p = (Product) session.getAttribute("p");
-        //4.响应数据
-        response.getWriter().print("getSessionServlet...JSESSIOID="+sessionId+"p="+p.toString());
+        //获取请求数据
+        String username = request.getParameter("username");
+        //输出数据
+        System.out.println("username="+username);
+        //响应数据给浏览器
+        response.getWriter().print("username="+username);*/
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

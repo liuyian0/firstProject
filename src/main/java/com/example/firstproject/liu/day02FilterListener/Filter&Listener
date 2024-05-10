@@ -1,0 +1,36 @@
+JavaWeb的三大组件：
+Servlet小应用程序
+Filter过滤器
+Listener监听器
+
+Filter生命周期
+init创建 doFilter执行过滤 destory销毁
+
+用法
+添加注解@WebFilter("/filterDemo01.html")，表示要拦截的项目
+如拦截filterDemo.html文件，此html文件保存在webapp目录下
+
+另外@WebServlet(value = "/MyServlet2",loadOnStartup = 0)
+通过loadOnStartup设置启动加载,tomcat启动时就会运行
+
+在doFilter中添加chain.doFilter(request, response);表示放行
+
+tips：过滤器一定是优先于servlet创建的,后于Servlet销毁
+
+拦截路径的用法：
+* 精准匹配
+		用户访问指定目标资源（/demo01.html）时，过滤器进行拦截
+* 目录匹配
+		用户访问指定目录下（/user/*）所有资源时，过滤器进行拦截
+* 后缀匹配
+		用户访问指定后缀名（*.html）的资源时，过滤器进行拦截,不能加/
+* 匹配所有
+		用户访问该网站所有资源（/*）时，过滤器进行拦截 掌握
+
+Filter默认是按照字母顺序执行的，如果过滤器名字第一个字母相同，再看过滤器名字的第二个字母，以此类推。从而形成一个执行链条。
+
+filter解决全站乱码问题
+原来的方法Demo01Servlet
+多个servlet，那么我们就会每个servlet中都会进行处理，这样代码会冗余
+filter方法EncodingFilter
+

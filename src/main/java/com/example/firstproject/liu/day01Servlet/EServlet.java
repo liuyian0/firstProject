@@ -1,4 +1,4 @@
-package com.example.firstproject.liu.day01;
+package com.example.firstproject.liu.day01Servlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
