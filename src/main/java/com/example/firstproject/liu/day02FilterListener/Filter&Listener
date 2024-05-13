@@ -34,3 +34,4 @@ filter解决全站乱码问题
 多个servlet，那么我们就会每个servlet中都会进行处理，这样代码会冗余
 filter方法EncodingFilter
 
+实现登陆权限的校验
