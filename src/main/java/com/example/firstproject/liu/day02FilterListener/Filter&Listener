@@ -35,3 +35,32 @@ filter解决全站乱码问题
 filter方法EncodingFilter
 
 实现登陆权限的校验
+
+Listener和ServletContext
+ServletContext表示上下文对象，属于接口，可以使用方法获取当前项目的所有文件的MIME类型
+request:只能在一次请求一次相应中进行数据的共享
+session:只能在一次会话过程中，可以有多次请求和响应
+ServletContext:只要项目存在，就可以共享数据，多次会话，多次请求和响应都可以共享数据，操作整个项目的配置文件
+
+方法：
+setAttribute(String name,Object object)    向ServletContext中存数据
+getAttribute(String name)   从ServletContext中取数据
+removeAttribute(name)    从ServletContext中移除数据
+String getRealPath(String path)   返回资源文件在服务器文件系统上的真实路径（文件的绝对路径）
+getMimeType(fileName)    获取服务器中文件类型
+ServletContextDemo01Servlet
+
+Listener就是负责监听上述属性的变化
+配置
+web.xml  MyXMLListener
+注解  MyAnnotatedListener
+
+
+
+
+
+
+
+
+
+
